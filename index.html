@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Era pra ser ele</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <img
+    id="foto"
+    src=""
+    alt="Foto do professor"
+  />
+
+  <p class="frase" id="frase">Devia ter sido ele 💀</p>
+
+  <button class="btn" id="btn">Clique aqui</button>
+
+  <script>
+    const btn  = document.getElementById('btn');
+    const foto = document.getElementById('foto');
+    const frase = document.getElementById('frase');
+
+    let ativo = false;
+
+    btn.addEventListener('click', function () {
+      ativo = !ativo;
+
+      if (ativo) {
+        foto.style.boxShadow = '0 0 20px 6px #f9c74f, 0 0 50px 15px #f3722c, 0 0 90px 30px rgba(249,199,79,0.35)';
+        foto.style.borderColor = '#f9c74f';
+        foto.style.animation = 'pulso 1s ease-in-out infinite alternate';
+        frase.classList.add('visivel');
+        btn.textContent = 'Apagar brilho';
+      } else {
+        foto.style.boxShadow = '';
+        foto.style.borderColor = 'rgba(255,255,255,0.15)';
+        foto.style.animation = '';
+        frase.classList.remove('visivel');
+        btn.textContent = 'Clique aqui';
+      }
+    });
+  </script>
+
+</body>
+</html>
